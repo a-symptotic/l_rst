@@ -1,1 +1,22 @@
-/target
+# Python virtual environment
+venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Rust build artifacts
+target/
+
+# Cargo lock & config files
+Cargo.lock
+Cargo.toml
+
+# macOS specific
+.DS_Store
+
+# Other editor files (optional)
+.vscode/
+.idea/

@@ -13,10 +13,14 @@ fn main() {
         if c {
         print!("Now C is a true Bool.\n");
         }
+        
 
-    }
+   }
+   for _ in -123..-100{
+    println!("WTF");
+   }
+   let my_str:String = String::from("This Is all i have been waitintg for.");
 
-    /*for c:i32 in 0..1000{
-        a = a + 100;
-    };*/
+    print!("{}\n",my_str);
+
 }

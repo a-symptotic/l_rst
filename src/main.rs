@@ -1,3 +1,4 @@
+use std::io;
 fn main() {
 //Understanding Variable Declaration 
 //By defult Every thing is Immutable
@@ -5,7 +6,7 @@ fn main() {
     let b: i16 = 23;
     let my_str:String =String::from("Hello, World!");
     
-    print!("a:{}  b:{}\n",b,a);
+    print!("a:{}  b:{}\n",a,b);
     let mut c:bool = false;
 //Undersataning the If else Statements 
     if c {
@@ -19,19 +20,20 @@ fn main() {
         }
    }
 
-   let n:i8 =22;
+   let n:i8 =12;
    if n ==0{
     print!("{}\n",12);
-   }
-   else if n==12{
+    }
+    else if n==12{
        println!("n Was always 12");
    }
    else {
        println!("I donno what is n")
    }
 //Syntax of  Loop
-   for _ in -123..-110{
-    println!("Loop Dekha");
+   for i in 0..10{
+    print!("{}",i);
+    println!("{}Loop Dekha",i);
 }
    // This is how i learned to Use Str
    // Here the Variable "my_nud_str" allocated in heep and yes Probably , I am not sure but my_nud_str Contains the adress or the Ownership pointer and yes it's accessable in all by main()
@@ -67,6 +69,27 @@ fn main() {
 
     println!("{}",got);
 
+    //For taking Input 
+
+    let mut input:String = String::new();
+
+    io::stdin().read_line(&mut input).expect("Failed Bro");
+
+    //Printing the string
+
+    println!("The Str You have entered is {}",input);
+
+
+    //let's try to get another str from user
+
+    println!("Can you Please enter another");
+
+    let mut last_input_str:String = String::new();
+    io::stdin().read_line(&mut last_input_str).expect("Gand Fati I am Panikiking");
+
+    println!("That's it for today\t{}",last_input_str);
+
+
 
 }   
 //This is the way to declare a function with return value
@@ -75,7 +98,7 @@ fn transfer(s:String) ->String{
     return s;
     
 }
-fn muting(mut ad:&mut String) {
-    ad.push_str("   Piyu Bole Piya Bole");
+fn muting(ad:&mut String) {
+    ad.push_str("   Piyu Bole Piya Bole\nEnter Your Str Now:");
     
 }

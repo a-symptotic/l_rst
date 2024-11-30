@@ -1,5 +1,47 @@
 use std::io;
+
+//Now i am gonna try to use a structure
+struct Tata{
+    school:String,
+    building:u8,
+    month_year:f32
+}
+
+struct Details{
+    name:String,
+    price:u16,
+    parient:String,
+    quantity:u8
+}
 fn main() {
+//Day 1
+//Implementing struct
+    let my = Tata{
+        school:String::from("Pahanga Nodal High School"),
+        building :11,
+        month_year : 12.2001,
+    };
+//Printing The Structure
+
+    println!("The name of my School is {}, It has {} buildings and it was made by TATA in {}.",my.school,my.building,my.month_year);
+//Creating And using another Struct
+    let perfume= Details{
+        name:String::from("God Father"),
+        price:449,
+        parient:String::from("Beardo"),
+        quantity:50
+    };
+    let golab_jal= Details{
+        name:String::from("Rose Water"),
+        price:95,
+        parient:String::from("Dabur"),
+        quantity:100
+    };
+    
+
+
+
+
 //Understanding Variable Declaration 
 //By defult Every thing is Immutable
     let a:i8 = 7;

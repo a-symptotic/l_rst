@@ -26,7 +26,7 @@ fn main() {
     println!("The name of my School is {}, It has {} buildings and it was made by TATA in {}.",my.school,my.building,my.month_year);
 //Creating And using another Struct
     let perfume= Details{
-        name:String::from("God Father"),
+        name:String::from("God-Father"),
         price:449,
         parient:String::from("Beardo"),
         quantity:50
@@ -39,6 +39,9 @@ fn main() {
     };
     
 
+//Printing the requred things
+    print!("I have one {} and a {} Pack, I don't regularly use them but there details are as follows.\nThe {} is priced {} rupies\n",golab_jal.name,perfume.name,perfume.name,perfume.price);
+    println!("The parient company of {} is {} and i have {}ml of it.",perfume.name,perfume.parient,perfume.quantity);
 
 
 
@@ -85,13 +88,13 @@ fn main() {
    println!("Seems Bad {}",jhut);
    print!("{}\n{}\n",my_str2,my_str);
 
-   // Understanding Borrowing
+   // Understanding Borrowing // here I presume the 
 
-   let mut my_nud_str:String = String::from("Dil Jhoom");
+   let mut my_nud_str:String = my_str2;//After this  i can't passen the value my_str2...
 
    my_nud_str.push_str("Tumhe Hoor hoor");
-   println!("Take   {}  ",my_nud_str);
-
+   println!("{}",my_nud_str);
+   
 
    
    //Now I want to Create another function to undersstand 2 types of passing by ref
@@ -104,6 +107,7 @@ fn main() {
     //A function like transfer can also transfer the ownership
 
     let mut got:String=transfer(new_owner);//From this onwords the same new owner is borrowed and will be destroyed after transfer's Exucation
+    //This Will Not Work "println!("{}",new_owner)"
 
     //The Thing is where i wanna pass by ref the "&" keyword can also be used 
 
@@ -113,34 +117,37 @@ fn main() {
 
     //For taking Input 
 
-    let mut input:String = String::new();
+    let mut input:String = String::new();// Declaration of input of type String and  initialize it's value to type string::new()
+    println!("Input Your String Here");
 
-    io::stdin().read_line(&mut input).expect("Failed Bro");
+    io::stdin().read_line(&mut input).expect("Failed Bro");//the readline function of io of type 'standard input(stdin)' takes the adress to store the input as mutable ref
 
     //Printing the string
 
     println!("The Str You have entered is {}",input);
+    let last_owner :String =  transfer(input);
 
 
-    //let's try to get another str from user
+    //let's try to get another
+    println!("last_owner is the new Owner of {}",last_owner);
 
     println!("Can you Please enter another");
+    
+    //Writing this as practice 
+    let mut last_input_string:String = String::new();
+    io::stdin().read_line(&mut last_input_string).expect("Helani Value Assign Kari");
 
-    let mut last_input_str:String = String::new();
-    io::stdin().read_line(&mut last_input_str).expect("Gand Fati I am Panikiking");
-
-    println!("That's it for today\t{}",last_input_str);
+    println!("That's it for today\t{}",last_input_string);
 
 
 
 }   
 //This is the way to declare a function with return value
 fn transfer(s:String) ->String{
-    println!("I transfer is the new Owner of {}",s);
     return s;
     
 }
 fn muting(ad:&mut String) {
-    ad.push_str("   Piyu Bole Piya Bole\nEnter Your Str Now:");
+    ad.push_str("   Piyu Bole Piya Bole");
     
 }

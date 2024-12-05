@@ -1,20 +1,14 @@
 use std::io;
+//use rand::Rng;
+//use rug::Integer;
 
 //Now i am gonna try to use a structure
-struct Tata{
-    school:String,
-    building:u8,
-    month_year:f32
-}
+struct Tata{school:String,building:u8,month_year:f32}
 
-struct Details{
-    name:String,
-    price:u16,
-    parient:String,
-    quantity:u8
-}
+struct Details{name:String,price:u16,parient:String,quantity:u8}
 fn main() {
 //Day 1
+
 //Implementing struct
     let my = Tata{
         school:String::from("Pahanga Nodal High School"),
@@ -77,10 +71,11 @@ fn main() {
    }
 //Syntax of  Loop
    for i in 0..10{
-    print!("{}",i);
-    println!("{}Loop Dekha",i);
-}
+    println!("{}",i);
+    //println!("{}Loop Dekha",i);
+    }
    // This is how i learned to Use Str
+
    // Here the Variable "my_nud_str" allocated in heep and yes Probably , I am not sure but my_nud_str Contains the adress or the Ownership pointer and yes it's accessable in all by main()
 
    let my_str2:String = String::from("This Is all i have been waitintg for.");
@@ -138,7 +133,13 @@ fn main() {
     io::stdin().read_line(&mut last_input_string).expect("Helani Value Assign Kari");
 
     println!("That's it for today\t{}",last_input_string);
-
+/* 
+//Here i will create a function to,do the same thing that i was doing on excel
+    let consumption = average_fuel();
+    let mut time   =1.25; 
+    let total_consumption:i32 = total(consumption,time);
+    println!("So the total fuel consumption is {}",total_consumption);
+*/
 
 
 }   
@@ -151,3 +152,15 @@ fn muting(ad:&mut String) {
     ad.push_str("   Piyu Bole Piya Bole");
     
 }
+
+/*fn average_fuel()->f16{
+    let mut between = rand::thread_rng();
+    let avg = between.gen_range(24.0..28.8);//gen_range is the generator similar to the for loop syntax
+    println!("The average value = {}",avg );
+    return avg;
+}
+fn total(f:f16,hour:f16) ->i32{
+    let value:u32=f*(hour.round_dp(1));
+    return value;
+    
+}*/
